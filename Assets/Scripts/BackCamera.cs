@@ -14,14 +14,13 @@ public class BackCamera : MonoBehaviour
         var renderer = GetComponent<RawImage>();
         webcamTexture = new WebCamTexture(1024, 1820);
         renderer.texture = webcamTexture;
-        baseRotation = transform.rotation;
-        webcamTexture.Play();
+        //baseRotation = transform.rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
-       // webcamTexture.Play();
-        transform.rotation = baseRotation * Quaternion.AngleAxis(webcamTexture.videoRotationAngle, Vector3.up);
+        webcamTexture.Play();
+        transform.rotation = baseRotation * Quaternion.AngleAxis(webcamTexture.videoRotationAngle, Vector3.back);
     }
 }

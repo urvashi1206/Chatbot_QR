@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Window.unity
-    guid: 7556d83b67dba5f4aa08ffe34fc5fa40
-  - enabled: 1
     path: Assets/Scenes/ChatGPT.unity
     guid: 523e2a98b1c50374b9e2093bdc0ce4ee
+  - enabled: 1
+    path: Assets/Scenes/WrongInputScene.unity
+    guid: 48a48418686a06942a81ea6dd412ff16
   m_configObjects: {}
