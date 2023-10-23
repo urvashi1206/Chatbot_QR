@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LevelChange : MonoBehaviour
+public class CheckMorse : MonoBehaviour
 {
     public InputField inputField;
     // Start is called before the first frame update
@@ -19,8 +19,15 @@ public class LevelChange : MonoBehaviour
         
     }
 
-    public void LoadScene(string scenename)
+    public void CheckMorseCode()
     {
-        SceneManager.LoadScene(scenename);
+        if (inputField.text != "71")
+        {
+            SceneManager.LoadScene("WrongInputScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("MainScene");
+        }
     }
 }

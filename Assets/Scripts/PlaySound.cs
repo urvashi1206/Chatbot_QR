@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class LevelChange : MonoBehaviour
+public class PlaySound : MonoBehaviour
 {
-    public InputField inputField;
+    public AudioSource sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +17,8 @@ public class LevelChange : MonoBehaviour
         
     }
 
-    public void LoadScene(string scenename)
+    public void playSoundEffect()
     {
-        SceneManager.LoadScene(scenename);
+        sound.Play();
     }
 }

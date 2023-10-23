@@ -8,6 +8,7 @@ using ZXing;
 public class QRScanner : MonoBehaviour
 {
     public Button _continueButton;
+    public Quaternion baseRotation;
 
     WebCamTexture webcamTexture;
     string QrCode = string.Empty;
@@ -25,6 +26,7 @@ public class QRScanner : MonoBehaviour
     {
         IBarcodeReader barCodeReader = new BarcodeReader();
         webcamTexture.Play();
+        transform.rotation = baseRotation * Quaternion.AngleAxis(webcamTexture.videoRotationAngle, Vector3.back);
         var snap = new Texture2D(webcamTexture.width, webcamTexture.height, TextureFormat.ARGB32, false);
         while (string.IsNullOrEmpty(QrCode))
         {
