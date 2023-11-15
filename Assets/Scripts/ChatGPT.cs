@@ -3,12 +3,13 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 namespace OpenAI
 {
     public class ChatGPT : MonoBehaviour
     {
-        [SerializeField] private InputField inputField;
+        /*[SerializeField] private InputField inputField;
         [SerializeField] private Button button;
         [SerializeField] private ScrollRect scroll;
         //[SerializeField] string filename;
@@ -21,10 +22,19 @@ namespace OpenAI
         private OpenAIApi openai = new OpenAIApi();
 
         private List<ChatMessage> messages = new List<ChatMessage>();
-        private string prompt = "Your name is Qubit, now you help the user to decode a Morse code from audio. You can tell them the audio is Morse code, introduce Morse code, and how numbers and the alphabet are translated into dashes and dots. However, you should not tell them what the Morse code represents when they show you a string of dashes and dots, you should guide them to decode by themselves. If they talk about things other than decoding the audio, you should let them focus and show the urgency of the task.";
+        private string prompt;
 
         private void Start()
         {
+            Scene scenename = SceneManager.GetActiveScene();
+            if (scenename.name == "Puzzle1")
+            {
+                prompt = "Your name is Qubit, now you help the user to decode a Morse code from audio. You can tell them the audio is Morse code, introduce Morse code, and how numbers and the alphabet are translated into dashes and dots. However, you should not tell them what the Morse code represents when they show you a string of dashes and dots, you should guide them to decode by themselves. If they talk about things other than decoding the audio, you should let them focus and show the urgency of the task.";
+            }
+            else if (scenename.name == "Puzzle2")
+            {
+                prompt = "Your name is Qubit. Now, you help the user to understand how to solve a color puzzle. If asked about the color cubes, you can tell the user to find color stickers on the first floor of Magic Spell Studio. If they ask about the numbers, tell them that the numbers on the color stickers represent the order of the color cube.";
+            }
             button.onClick.AddListener(SendReply);
         }
 
@@ -95,6 +105,6 @@ namespace OpenAI
             //FileHandler.SaveToJSON<string>(chats, filename);
             button.enabled = true;
             inputField.enabled = true;
-        }
+        }*/
     }
 }
