@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 
 namespace OpenAI
 {
-    public class ChatGPT : MonoBehaviour
+    /*public class ChatGPT : MonoBehaviour
     {
-        /*[SerializeField] private InputField inputField;
+        [SerializeField] private InputField inputField;
         [SerializeField] private Button button;
         [SerializeField] private ScrollRect scroll;
         //[SerializeField] string filename;
@@ -105,6 +105,6 @@ namespace OpenAI
             //FileHandler.SaveToJSON<string>(chats, filename);
             button.enabled = true;
             inputField.enabled = true;
-        }*/
-    }
+        }
+    }*/
 }
