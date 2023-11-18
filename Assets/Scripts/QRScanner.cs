@@ -9,6 +9,8 @@ public class QRScanner : MonoBehaviour
 {
     public Button _continueButton;
     public Quaternion baseRotation;
+    public string textToCheck;
+    public GameObject WrongQR;
 
     WebCamTexture webcamTexture;
     string QrCode = string.Empty;
@@ -20,6 +22,7 @@ public class QRScanner : MonoBehaviour
         renderer.texture = webcamTexture;
         //renderer.material.mainTexture = webcamTexture;
         StartCoroutine(GetQRCode());
+        WrongQR.SetActive(false);
     }
 
     IEnumerator GetQRCode()
@@ -40,8 +43,15 @@ public class QRScanner : MonoBehaviour
                     if (!string.IsNullOrEmpty(QrCode))
                     {
                         Debug.Log("DECODED TEXT FROM QR: " + QrCode);
-                        _continueButton.gameObject.SetActive(true);
-                        break;
+                        if (QrCode == textToCheck)
+                        {
+                            _continueButton.gameObject.SetActive(true);
+                            break;
+                        }
+                        else
+                        {
+                            WrongQR.SetActive(true);
+                        }
                     }
                 }
             }
